@@ -17,8 +17,7 @@ int main() {
         }
         catch (const std::bad_alloc& e) {
             std::cerr << "oops: " << e.what() << '\n';
-
-
+ 
             for (const auto& allocation : allocatedMemory) {
                 delete[] allocation.first;
                 std::cout << "freed " << allocation.second / (1024 * 1024) << " MB\n";
